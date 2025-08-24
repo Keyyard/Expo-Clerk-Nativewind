@@ -1,50 +1,66 @@
-# Welcome to your Expo app 👋
+# Expo + Clerk + Nativewind (Tailwind)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A bootstrap template for Expo apps with Clerk authentication and NativeWind (Tailwind CSS for React Native).
 
-## Get started
+## What this project includes
 
-1. Install dependencies
+- Expo Router for file-based routing
+- Clerk (`@clerk/clerk-expo`) for authentication with secure token caching
+- NativeWind + Tailwind CSS for styling React Native components
+- Example custom sign-up and sign-in screens in `app/(auth)/`
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
 
-2. Start the app
+- Node.js (LTS recommended)
+- npm (or pnpm/yarn)
 
-   ```bash
-   npx expo start
-   ```
+## Environment variables
 
-In the output, you'll find options to open the app in a
+Create a `.env` file in the project root with your Clerk publishable key:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_YOUR_CLERK_PUBLISHABLE_KEY
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+If you use `pnpm` or `yarn`, run the equivalent commands for your package manager.
 
-## Learn more
+## NativeWind / Tailwind setup
 
-To learn more about developing your project with Expo, look at the following resources:
+This repo contains the required config files:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- `babel.config.js` (includes `nativewind/babel` plugin)
+- `tailwind.config.js`
+- `postcss.config.js`
+- `app/styles/global.css` (Tailwind entry with `@tailwind` directives)
 
-## Join the community
+## Clerk authentication
 
-Join our community of developers creating universal apps.
+- `app/_layout.tsx` wraps the app with `ClerkProvider` and `tokenCache` for secure storage.
+- The auth routes are located in `app/(auth)/` with custom `sign-in` and `sign-up` screens.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Run the app
+
+Start the development server:
+
+```powershell
+npm start
+```
+
+## Useful file locations
+
+- `app/_layout.tsx` — Clerk provider + global imports
+- `app/(auth)/sign-in.tsx` — custom sign-in screen
+- `app/(auth)/sign-up.tsx` — custom sign-up screen
+- `app/(auth)/_layout.tsx` — auth route gating
+- `app/(home)/` — example signed-in home screens
+- `tailwind.config.js`, `postcss.config.js`, `babel.config.js`
+
+## References
+
+- [Clerk Documentation](https://clerk.dev/docs)
+- [NativeWind Documentation](https://www.nativewind.dev/)
+- [Expo Documentation](https://docs.expo.dev/)
+
+---
+
+Happy building — tell me what you'd like next (styling, validation, or adding social sign-in).

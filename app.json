@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "CoffeeFinderApp",
-    "slug": "CoffeeFinderApp",
+    "name": "expo-clerk-tailwind",
+    "slug": "expo-clerk-tailwind",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "coffeefinderapp",
+    "scheme": "expo-clerk-tailwind",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
