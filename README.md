@@ -9,6 +9,8 @@ A bootstrap template for Expo apps with Clerk authentication and NativeWind (Tai
 - NativeWind + Tailwind CSS for styling React Native components
 - Example custom sign-up and sign-in screens in `app/(auth)/`
 
+![Screenshot of the app showing a sign-in screen with email and password fields](./assets/images/ss.png)
+
 ## Prerequisites
 
 - Node.js (LTS recommended)
